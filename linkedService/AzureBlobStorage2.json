@@ -1,0 +1,11 @@
+{
+	"name": "AzureBlobStorage2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"sasUri": "https://blobstorage4231.blob.core.windows.net/blobstorage?sp=r&st=2022-05-07T15:24:54Z&se=2022-05-07T23:24:54Z&spr=https&sv=2020-08-04&sr=c&sig=%2FQ58Jqv3H568Q4IIZSWv1KF%2BU6o2GsTfl91nBCpL2nk%3D?sp=r&st=2022-05-07T15:24:54Z&se=2022-05-07T23:24:54Z&spr=https&sv=2020-08-04&sr=c&sig=%2FQ58Jqv3H568Q4IIZSWv1KF%2BU6o2GsTfl91nBCpL2nk%3D"
+		}
+	}
+}
