@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DestinationDataset_sol",
+						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -58,10 +58,38 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
+				"select1 sink(allowSchemaDrift: false,",
+				"     validateSchema: true,",
+				"     input(",
+				"          herbicideTolerantFlag as string,",
+				"          imageUrl_null as string,",
+				"          modifiedtime as timestamp,",
+				"          owner as string,",
+				"          productLine as integer,",
+				"          segmentCode as string,",
+				"          insectprotection as string,",
+				"          creationtime as date,",
+				"          updateon as binary",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          herbicideTolerantFlag,",
+				"          imageUrl_null,",
+				"          modifiedtime,",
+				"          owner,",
+				"          productLine,",
+				"          segmentCode,",
+				"          insectprotection,",
+				"          creationtime,",
+				"          updateon = {update on}",
+				"     )) ~> sink1"
 			]
 		}
 	}

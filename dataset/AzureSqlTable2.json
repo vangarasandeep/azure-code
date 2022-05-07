@@ -1,0 +1,55 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "herbicideTolerantFlag",
+				"type": "varchar"
+			},
+			{
+				"name": "imageUrl_null",
+				"type": "varchar"
+			},
+			{
+				"name": "modifiedtime",
+				"type": "time",
+				"scale": 7
+			},
+			{
+				"name": "owner",
+				"type": "varchar"
+			},
+			{
+				"name": "productLine",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "segmentCode",
+				"type": "varchar"
+			},
+			{
+				"name": "insectprotection",
+				"type": "varchar"
+			},
+			{
+				"name": "creationtime",
+				"type": "date"
+			},
+			{
+				"name": "updateon",
+				"type": "timestamp"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "techSegments"
+		}
+	}
+}
