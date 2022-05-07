@@ -48,7 +48,102 @@
 						}
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "# &Item",
+									"type": "String"
+								},
+								"sink": {
+									"name": "# &Item",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "creationtime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "creationtime",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "herbicideTolerantFlag",
+									"type": "String"
+								},
+								"sink": {
+									"name": "herbicideTolerantFlag",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "imageUrl_null",
+									"type": "String"
+								},
+								"sink": {
+									"name": "imageUrl_null",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "modifiedtime",
+									"type": "String"
+								},
+								"sink": {
+									"name": "modifiedtime",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "owner",
+									"type": "String"
+								},
+								"sink": {
+									"name": "owner",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "productLine",
+									"type": "String"
+								},
+								"sink": {
+									"name": "productLine",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "segmentCode",
+									"type": "String"
+								},
+								"sink": {
+									"name": "segmentCode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "insectprotection",
+									"type": "String"
+								},
+								"sink": {
+									"name": "insectprotection",
+									"type": "String"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -62,6 +157,30 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow1",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"annotations": []
