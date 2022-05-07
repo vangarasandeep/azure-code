@@ -1,0 +1,60 @@
+{
+	"name": "SourceDataset_sol",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "TechnologySegment.csv",
+				"container": "blobstorage"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "# &Item",
+				"type": "String"
+			},
+			{
+				"name": "creationtime",
+				"type": "String"
+			},
+			{
+				"name": "herbicideTolerantFlag",
+				"type": "String"
+			},
+			{
+				"name": "imageUrl_null",
+				"type": "String"
+			},
+			{
+				"name": "modifiedtime",
+				"type": "String"
+			},
+			{
+				"name": "owner",
+				"type": "String"
+			},
+			{
+				"name": "productLine",
+				"type": "String"
+			},
+			{
+				"name": "segmentCode",
+				"type": "String"
+			},
+			{
+				"name": "insectprotection",
+				"type": "String"
+			}
+		]
+	}
+}
